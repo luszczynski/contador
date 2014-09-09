@@ -104,7 +104,7 @@ h3,#time,.texto,#update {
 #time {
 	font-size: 17em;
 	font-family:"Pocket Calculator";
-	color: white !important;
+	color: red !important;
 }
 
 h1, h3, #time {
