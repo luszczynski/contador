@@ -9,7 +9,7 @@
 <title>Contador</title>
 
 <script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
-<script src="js/jquery.cookie.js" type="text/javascript"></script>
+<!--script src="js/jquery.cookie.js" type="text/javascript"></script-->
 
 <style type="text/css">
 
@@ -126,11 +126,6 @@ color: #222;
 </head>
 <body>
 
-	<%
-		if(session.getAttribute("cont") == null)
-			session.setAttribute("cont", 0);
-	%>
-
 	<div id="main">
 	
 		<div id="header">
@@ -155,16 +150,12 @@ color: #222;
 			<script type="text/javascript">
 
 				function incrementa() {
-					var cookie = $.cookie("JSESSIONID");
-
 					$.ajax({url:"ServletUtils",success:function(result){
 					    $("#time").html(result.split(";")[0]);
 					    $("#remotehost").html(result.split(";")[1]);
 
-					    if(cookie.indexOf(".") != -1)
-					    	$("#server").html(cookie.split(".")[1]);
-					    else
-					    	$("#server").html(cookie);
+					    $("#server").html(result.split(";")[3]);
+						
 					}});
 				}
 			

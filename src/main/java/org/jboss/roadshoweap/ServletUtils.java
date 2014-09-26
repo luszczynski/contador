@@ -28,7 +28,6 @@ public class ServletUtils extends HttpServlet {
 		int cont;
 		
 		if(session.getAttribute("cont") == null)
-			//session.setAttribute("cont",0);
 			cont = 0;
 		else {
 			cont = Integer.parseInt(session.getAttribute("cont").toString());
@@ -39,7 +38,7 @@ public class ServletUtils extends HttpServlet {
 		
 		log.info("Contador = " + cont);
 		
-		response.getWriter().write(cont + ";" + request.getRemoteHost() + ";" + request.getLocalAddr() + ":" + request.getLocalPort());
+		response.getWriter().write(cont + ";" + request.getRemoteHost() + ";" + request.getLocalAddr() + ":" + request.getLocalPort() + ";" + System.getProperty( "jboss.server.name" ));
 	}
 
 	/**
