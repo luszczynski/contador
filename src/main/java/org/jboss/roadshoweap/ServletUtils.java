@@ -15,7 +15,7 @@ import org.jboss.logging.Logger;
 @WebServlet(urlPatterns="/ServletUtils")
 public class ServletUtils extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
+	 
 	@Inject
 	private Logger log;
 	
